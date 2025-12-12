@@ -9,13 +9,13 @@ This project investigates whether large-scale audio features extracted from the 
 
 ## Hypotheses
 
-### **H1 — Systematic Acoustic Differences**  
+### **RQ1 — Systematic Acoustic Differences**  
 Songs by male and female artists present significantly different distributions in some acoustic characteristics.
 
-### **H2 — Feature-Specific Effects**  
+### **RQ2 — Feature-Specific Effects**  
 Certain acoustic dimensions (timbre coefficients or loudness...) contribute more strongly than others to gender differentiation.
 
-### **H3 — Genre Interaction**  
+### **RQ3 — Genre Interaction**  
 The relationship between artist gender and acoustic features depends on genre.  
 Differences may be more pronounced in certain musical contexts (pop, rap...) than in others.
 
