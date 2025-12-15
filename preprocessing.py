@@ -13,7 +13,7 @@ The preprocessing pipeline includes:
 - Two-level aggregation: segments -> songs -> artists
 
 Author: Camille Dupré Tabti, Olivia Robles
-Date: December 2024
+Date: December 2025
 Course: Foundation of Digital Humanities (DH-405), EPFL
 """
 
