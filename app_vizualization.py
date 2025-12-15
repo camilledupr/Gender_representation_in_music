@@ -42,7 +42,7 @@ app = Dash(__name__, external_stylesheets=external_stylesheets)
 # 1. Load and Validate Dataset
 # ================================================================
 
-df = pd.read_csv("final.csv")
+df = pd.read_csv("final_artist_level.csv")
 
 # Base metadata required
 required_base_cols = ["genre_principal", "artist_name", "title", "year", "gender", "country"]
