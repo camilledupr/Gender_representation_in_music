@@ -1,65 +1,73 @@
-# Acoustic Differences and Artist Gender in the Million Song Dataset  
-### Exploring gendered patterns in timbre, pitch, and global musical descriptors
+# Acoustic Differences and Artist Gender in the Million Song Dataset
+**Exploring gendered patterns in timbre, pitch, and global musical descriptors**
 
-## Research Question  
-**Do the acoustic characteristics of songs: timbre, pitches, key, mode, tempo, time signature, and loudness differ systematically according to the declared social gender (male/female) of the artist?**
+---
 
-This project investigates whether large-scale audio features extracted from the Million Song Dataset (MSD), enriched with metadata from MusicBrainz, exhibit measurable differences between male and female artists.
+## **Research Questions**
+Do the acoustic characteristics of songs—timbre, pitch, key, mode, tempo, time signature, and loudness—differ systematically according to the declared social gender (male/female) of the artist?
 
+### **Hypotheses**
+- **RQ1**: Songs by male and female artists exhibit significantly different distributions in some acoustic characteristics.
+- **RQ2**: Certain acoustic dimensions (e.g., timbre coefficients, loudness) contribute more strongly to gender differentiation.
+- **RQ3**: The relationship between artist gender and acoustic features varies by genre, with differences more pronounced in specific musical contexts (e.g., pop, rap).
 
-## Hypotheses
+---
 
-### **RQ1 — Systematic Acoustic Differences**  
-Songs by male and female artists present significantly different distributions in some acoustic characteristics.
+## **Motivation**
+Gender disparities in the music industry are well-documented:
+- Only **30%** of artists in the *2022 Billboard Hot 100 Year-End Chart* were women.
+- In top Billboard hits (2012–2017), **12.3%** of credited songwriters and **2.1%** of producers were women.
+- Metadata-based studies reveal persistent gendered patterns in collaboration networks, career trajectories, and output, reflecting broader social biases.
 
-### **RQ2 — Feature-Specific Effects**  
-Certain acoustic dimensions (timbre coefficients or loudness...) contribute more strongly than others to gender differentiation.
+This project investigates whether these inequalities extend to the **acoustic properties** of music itself.
 
-### **RQ3 — Genre Interaction**  
-The relationship between artist gender and acoustic features depends on genre.  
-Differences may be more pronounced in certain musical contexts (pop, rap...) than in others.
+---
 
-## Motivation
+## **Dataset**
+A **10,000-track subset** of the *Million Song Dataset (MSD)*, enriched with *MusicBrainz* metadata:
+- **Artist gender** (male/female/unknown)
+- **Country, genre tags, artist type, and lifespan**
+- **Acoustic features**: 12 timbre coefficients, 12 pitch-class coefficients, tempo, loudness, key, mode, and time signature.
 
-### **Gender Inequalities in the Music Industry**
-Gender disparities in music are widely documented across performance, authorship, and production roles.
+### **Generated Datasets**
+| File | Description |
+|------|-------------|
+| `msd_metadata.csv` | Core track metadata (tempo, key, mode, etc.) |
+| `musicbrainzdata.csv` | Enriched metadata (gender, genre, country) |
+| `merged.csv` | Combined dataset for analysis |
+| `segments_pitches.csv` | Segment-level pitch averages |
+| `segments_timbre.csv` | Segment-level timbre averages |
+| `artist_timbre_embeddings.csv` | 12-dimensional timbre embeddings per artist |
 
-Examples include:
+---
 
-- Only **30%** of artists in the *2022 Billboard Hot 100 Year-End Chart* were women.  
-- In top Billboard hits (2012–2017):  
-  - **12.3%** of credited songwriters were women  
-  - **2.1%** of credited producers were women  
+## **Project Structure**
 
-Metadata-based studies show persistent gendered patterns in collaboration networks, career trajectories, and output.
+### **1. `MSD_working.py`**
+Extracts core MSD metadata and acoustic features → generates `msd_metadata.csv`.
 
-These inequalities reflect broader social processes:  
-gendered stereotypes, unequal access to production tools, network segregation, and biased gatekeeping.
+### **2. `Musicbrainz.py`**
+Fetches additional metadata (gender, genre, country) via the *MusicBrainz API* → generates `musicbrainzdata.csv`.
 
-## Dataset Description
+### **3. `merged_csv.py`**
+Merges `msd_metadata.csv` and `musicbrainzdata.csv` into `merged.csv`.
 
-This project uses a **10,000-track subset** of the Million Song Dataset (MSD), enriched with MusicBrainz metadata such as:
+### **4. `extract_segments.py`**
+Computes segment-level averages for pitch and timbre → generates `segments_pitches.csv` and `segments_timbre.csv`.
 
-- Artist gender *(male/female/unknown)*  
-- Artist country  
-- Genre tags  
-- Artist type and lifespan information  
+### **5. `representativity_subset.py`**
+Assesses whether the 10,000-track subset is representative of the full MSD using statistical comparisons.
 
-The dataset includes the following acoustic features:
+### **6. `app_visualization.py`**
+Interactive *Dash* web app for exploring acoustic features by gender, genre, geography, and release year, with nearest-neighbor track recommendations.
 
-- **12 timbre coefficients**  
-- **12 pitch-class coefficients**  
-- **tempo, loudness**  
-- **key & key confidence**  
-- **mode**  
-- **time signature**
+### **7. `gender_music_analysis.ipynb`**
+- **Part 1**: Data visualization (distributions, correlations).
+- **Part 2**: Statistical analysis to test hypotheses (RQ1–RQ3).
 
-Additional datasets produced include:
+---
 
-- `msd_metadata.csv` – metadata for each track  
-- `segments_pitches.csv` – segment-level chroma vectors  
-- `segments_timbre.csv` – segment-level timbre vectors  
-- Artist-level **12-dimensional timbre embeddings**
-
-Although smaller than the original 1M-track MSD, this subset preserves essential pitch and timbre structure and supports meaningful exploratory audio analysis.
-
+## **How to Use**
+1. Install dependencies:
+   ```bash
+   pip install -r requirements.txt
