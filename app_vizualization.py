@@ -58,7 +58,7 @@ required_cols = required_base_cols + feature_cols
 # Column presence check (fails fast if CSV is incomplete)
 for col in required_cols:
     if col not in df.columns:
-        raise ValueError(f"Column '{col}' missing from final.csv")
+        raise ValueError(f"Column '{col}' missing from final_song_level.csv")
 
 
 # ================================================================
