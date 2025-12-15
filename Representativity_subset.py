@@ -12,11 +12,11 @@ sns.set_style("whitegrid")
 # LOAD SUBSET DATASET
 # =========================
 
-df = pd.read_csv("final.csv")
+df = pd.read_csv("final_song_level.csv")
 
 # --- Genre ---
 if "genre_principal" not in df.columns:
-    raise ValueError("La colonne 'genre_principal' n'existe pas dans final.csv")
+    raise ValueError("La colonne 'genre_principal' n'existe pas dans final_song_level.csv")
 
 subset_genre_df = (
     df["genre_principal"]
@@ -31,7 +31,7 @@ subset_genre_df["Percentage"] = (
 
 # --- Gender ---
 if "gender" not in df.columns:
-    raise ValueError("La colonne 'gender' n'existe pas dans final.csv")
+    raise ValueError("La colonne 'gender' n'existe pas dans final_song_level.csv")
 
 subset_gender_df = (
     df["gender"]
@@ -46,7 +46,7 @@ subset_gender_df["Percentage"] = (
 
 # --- Country ---
 if "country" not in df.columns:
-    raise ValueError("La colonne 'country' n'existe pas dans final.csv")
+    raise ValueError("La colonne 'country' n'existe pas dans final_song_level.csv")
 
 subset_country_df = (
     df["country"]
