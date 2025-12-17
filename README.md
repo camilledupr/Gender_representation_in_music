@@ -53,7 +53,7 @@ Fetches additional metadata (gender, genre, country) via the *MusicBrainz API* �
 Merges `msd_metadata.csv` and `musicbrainzdata.csv` into `merged.csv`.
 
 ### **4. `extract_segments.py`**
-Computes segment-level averages for pitch and timbre → generates `segments_pitches.csv` and `segments_timbre.csv`.
+Computes segment-level averages for pitch and timbre → generates `segments_pitches.csv` and `segments_timbre.csv` (found in https://doi.org/10.5281/zenodo.17961667).
 
 ### **5. `representativity_subset.py`**
 Assesses whether the 10,000-track subset is representative of the full MSD using statistical comparisons.
