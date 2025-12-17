@@ -40,7 +40,7 @@ Computes segment-level averages for pitch and timbre → generates `segments_pit
 ### **5. `representativity_subset.py`**
 Assesses whether the 10,000-track subset is representative of the full MSD using statistical comparisons.
 
-### **6. `app_visualization.py`**
+### **6. `dash_interface.py`**
 Interactive *Dash* web app for exploring acoustic features by gender, genre, geography, and release year, with nearest-neighbor track recommendations.
 
 ### **7. `preprocessing.py`**
