@@ -1,0 +1,30 @@
+# Core Data Science Libraries
+pandas>=2.0.0
+numpy>=1.24.0
+scipy>=1.10.0
+scikit-learn>=1.2.0
+
+# Visualization
+matplotlib>=3.7.0
+seaborn>=0.12.0
+plotly>=5.15.0
+
+# Dash for Interactive Web Apps
+dash>=2.11.0
+dash-core-components>=2.0.0
+dash-html-components>=2.0.0
+dash-table>=5.0.0
+
+# Country and Geolocation Utilities
+pycountry>=22.3.5
+pycountry-convert>=0.7.2
+
+# Jupyter and IPython
+ipython>=8.14.0
+jupyter>=1.0.0
+
+# Optional but Useful
+tqdm>=4.66.0  # Progress bars
+openpyxl>=3.1.2  # Excel support for pandas
+xlrd>=2.0.1  # Legacy Excel support
+statsmodels>=0.14.0  # Advanced statistical modeling
