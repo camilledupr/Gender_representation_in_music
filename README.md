@@ -8,8 +8,8 @@ Do the acoustic characteristics of songs—timbre, pitch, key, mode, tempo, time
 
 ### **Hypotheses**
 - **RQ1**: Songs by male and female artists exhibit significantly different distributions in some acoustic characteristics.
-- **RQ2**: Certain acoustic dimensions (e.g., timbre coefficients, loudness) contribute more strongly to gender differentiation.
-- **RQ3**: The relationship between artist gender and acoustic features varies by genre, with differences more pronounced in specific musical contexts (e.g., pop, rap).
+- **RQ2**: Certain acoustic dimensions (for example timbre coefficients, loudness) contribute more strongly to gender differentiation.
+- **RQ3**: The relationship between artist gender and acoustic features varies by genre, with differences more pronounced in specific musical contexts (for example, pop, rap).
 
 ---
 
@@ -37,7 +37,8 @@ A **10,000-track subset** of the *Million Song Dataset (MSD)*, enriched with *Mu
 | `merged.csv` | Combined dataset for analysis |
 | `segments_pitches.csv` | Segment-level pitch averages |
 | `segments_timbre.csv` | Segment-level timbre averages |
-| `artist_timbre_embeddings.csv` | 12-dimensional timbre embeddings per artist |
+| `final_artist_level.csv` | Includes song-specific metadata and acoustic features |
+| `final_song_level.csv` | Aggregates acoustic features and metadata at the artist level|
 
 ---
 
@@ -61,7 +62,10 @@ Assesses whether the 10,000-track subset is representative of the full MSD using
 ### **6. `app_visualization.py`**
 Interactive *Dash* web app for exploring acoustic features by gender, genre, geography, and release year, with nearest-neighbor track recommendations.
 
-### **7. `gender_music_analysis.ipynb`**
+### **7. `preprocessing.py`**
+The preprocessing pipeline filters tracks by year, cleans gender and country labels, and computes mean pitch and timbre values at the song and artist levels. The resulting datasets are saved as `final_artist_level.csv` and `final_song_level.csv`.
+
+### **8. `gender_music_analysis.ipynb`**
 - **Part 1**: Data visualization (distributions, correlations).
 - **Part 2**: Statistical analysis to test hypotheses (RQ1–RQ3).
 
