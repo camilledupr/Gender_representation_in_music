@@ -1,25 +1,6 @@
 # Acoustic Differences and Artist Gender in the Million Song Dataset
 **Exploring gendered patterns in timbre, pitch, and global musical descriptors**
 
----
-
-## **Research Questions**
-Do the acoustic characteristics of songs—timbre, pitch, key, mode, tempo, time signature, and loudness—differ systematically according to the declared social gender (male/female) of the artist?
-
-### **Hypotheses**
-- **RQ1**: Songs by male and female artists exhibit significantly different distributions in some acoustic characteristics.
-- **RQ2**: Certain acoustic dimensions (for example timbre coefficients, loudness) contribute more strongly to gender differentiation.
-- **RQ3**: The relationship between artist gender and acoustic features varies by genre, with differences more pronounced in specific musical contexts (for example, pop, rap).
-
----
-
-## **Motivation**
-Gender disparities in the music industry are well-documented:
-- Only **30%** of artists in the *2022 Billboard Hot 100 Year-End Chart* were women.
-- In top Billboard hits (2012–2017), **12.3%** of credited songwriters and **2.1%** of producers were women.
-- Metadata-based studies reveal persistent gendered patterns in collaboration networks, career trajectories, and output, reflecting broader social biases.
-
-This project investigates whether these inequalities extend to the **acoustic properties** of music itself.
 
 ---
 
