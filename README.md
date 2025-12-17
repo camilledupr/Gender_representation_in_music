@@ -47,8 +47,9 @@ Interactive *Dash* web app for exploring acoustic features by gender, genre, geo
 The preprocessing pipeline filters tracks by year, cleans gender and country labels, and computes mean pitch and timbre values at the song and artist levels. The resulting datasets are saved as `final_artist_level.csv` and `final_song_level.csv`.
 
 ### **8. `gender_music_analysis.ipynb`**
-- **Part 1**: Data visualization (distributions, correlations).
-- **Part 2**: Statistical analysis to test hypotheses (RQ1–RQ3).
+- **Part 1**: Dataset Exploration
+- **Part 2**: Statistical Analysis (Artist-Level)
+
 
 ---
 
